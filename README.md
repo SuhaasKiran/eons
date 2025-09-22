@@ -1,10 +1,10 @@
 # EONS
-Gotta Unearth'em All!
+Your gateway to the past!
 
 Pokemon Go style game for prehistoric creatures!
 
 
-This is built on PyGame. 
+This is built on **PyGame**. 
 
 **Text generation**: GPT.
 
@@ -33,3 +33,4 @@ This is built on PyGame.
 4. Add checks for invalid inputs in Time and Place.
 5. Store all configs in config.yaml
 6. Provide options to use different text generation and image generation models.
+7. Make the HTTP requests async to speed up game loading.
