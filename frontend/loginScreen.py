@@ -11,7 +11,7 @@ from backend.utils import *
 # instructionScreen.py should define:
 #   show_instructions(screen, background) -> None
 import frontend.instructionScreen as instructionScreen
-from entities import *
+from backend.entities import *
 
 # ---------------- Config ---------------- #
 SCREEN_W, SCREEN_H = 900, 600

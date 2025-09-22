@@ -1,5 +1,5 @@
 import pygame
-from entities import *
+from backend.entities import *
 
 def check_user(username):
     return False, {"username": username, "place": "Amherst"}
@@ -51,7 +51,7 @@ def route_to_mode(background, screen):
     # Works with either the BaseDisplay InstructionDisplay or legacy instructionScreen.
     # """
         # Prefer BaseDisplay version if present
-    from frontend.modeSelect import ModeSelectDisplay
+    from frontend.modeSelectScreen import ModeSelectDisplay
     bg_path = background if isinstance(background, str) else None
     disp = ModeSelectDisplay(screen, background_path=bg_path)
     if bg_path is None and background is not None:
@@ -108,7 +108,7 @@ def route_to_exploreGame(background, screen, animal_info, background_path):
     # Works with either the BaseDisplay InstructionDisplay or legacy instructionScreen.
     # """
         # Prefer BaseDisplay version if present
-    from frontend.exploreGame import PokemonDisplay
+    from frontend.exploreGameScreen import PokemonDisplay
     bg_path = background if isinstance(background, str) else None
     disp = PokemonDisplay(screen, background_path=background_path, animals=animal_info)
     if bg_path is None and background is not None:

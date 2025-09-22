@@ -12,7 +12,7 @@ import uuid
 from pydantic import BaseModel, Field
 from langchain_openai import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
-from entities import *
+from backend.entities import *
 from dotenv import load_dotenv
 import os
 
