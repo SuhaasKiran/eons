@@ -1,9 +1,13 @@
 # EONS
-**Eons Game **
 Gotta Unearth'em All!
 
+Pokemon Go style game for prehistoric creatures!
+
+
 This is built on PyGame. 
+
 **Text generation**: GPT.
+
 **Image generation**: Deep AI (https://deepai.org/machine-learning-model/text2img)
 
 **To play the game, follow the steps:**
