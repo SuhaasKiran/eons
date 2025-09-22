@@ -19,8 +19,8 @@ This is built on PyGame.
     DEEPAI_API_KEY: <your_deepai_api_key>
    
 4. Create a virtual environment
-5. Install the requirements - pip install -r requirements.txt
-6. Run the code - python -m startGame
+5. Install the requirements: pip install -r requirements.txt
+6. Run the code: python -m startGame
 
 
 <img width="1792" height="1198" alt="image" src="https://github.com/user-attachments/assets/f8fcecdc-4ef7-4420-a217-8c94e2b03ff8" />
