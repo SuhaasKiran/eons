@@ -37,7 +37,7 @@ class TimePlaceInfoLC(BaseModel):
     species: List[SpeciesInfoLC] = Field(
         description="3 random representative animal species of that epoch (at/around the given place and time). No flora or plants."
     )
-    summary: str = Field(description="Detiled paragraph about the place and time with some interesting facts in 100 words.")
+    summary: str = Field(description="Detiled paragraph about the place and time with some interesting facts in 100 words, written as if you're speaking directly to the user.")
 
 @dataclass
 class TimePlaceInfo:

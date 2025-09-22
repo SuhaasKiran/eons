@@ -52,7 +52,7 @@ class InfoDisplay(BaseDisplay):
                  time_place_info=None, time_place_animals=None, time_background="frontend/assets/swamp.png"):
         super().__init__(screen, background_path)
         self.FONT_HERO = _font(40, bold=True); self.FONT_MD = _font(22); self.FONT_SM = _font(16)
-        self.title = title or "Info"
+        self.title = title or "Where are you?"
         print("time_place_info =", time_place_info)  # DEBUG
         print("time place_animals =", time_place_animals)  # DEBUGs
         self.full_text = time_place_info['summary'] or "This is a streaming paragraph. Press Space to fast-forward. Press Start to continue."
