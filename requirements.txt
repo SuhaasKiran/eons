@@ -1,0 +1,8 @@
+python-dotenv
+pyyaml
+pygame
+pydantic
+requests
+langchain
+langchain-openai
+openai
