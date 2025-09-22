@@ -89,6 +89,7 @@ class InfoDisplay(BaseDisplay):
                 if not self._done: self._finish_stream()
                 else: self.result = "start"; pygame.event.post(pygame.event.Event(pygame.QUIT)); return
             if event.key == pygame.K_ESCAPE: pygame.event.post(pygame.event.Event(pygame.QUIT)); return
+            if event.key == pygame.K_m: res = route_to_mode(self.background_path, self.screen); return
     def update(self, dt_ms: int):
         if self._done: return
         self._accum += dt_ms

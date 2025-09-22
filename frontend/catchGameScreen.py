@@ -299,6 +299,7 @@ class CaptureGameDisplay(BaseDisplay):
             running = False
         if keys[pygame.K_i]:
             route_to_instructions(self.background_path, self.screen)
+        if event.key == pygame.K_m: res = route_to_mode(self.background_path, self.screen); return
 
     def update(self, dt_ms: int):
         keys = pygame.key.get_pressed()
@@ -400,7 +401,7 @@ class CaptureGameDisplay(BaseDisplay):
                 self.state = STATE_PLAYING
 
             # Hint bar
-            self.draw_text_center(surface, "Press E to Stop • ESC to Exit", get_font(18), (220, 230, 245), 24)
+            self.draw_text_center(surface, "Press E to Stop • I for Instructions", get_font(18), (220, 230, 245), 24)
 
         elif self.state == STATE_PLAYING:
             # Draw entities

@@ -214,7 +214,7 @@ class ModeSelectDisplay(BaseDisplay):
         player_info.draw(surface, hover_player_info, (self.FONT_TITLE, self.FONT_DESC))
 
         # Footer + X
-        hint = self.FONT_DESC.render("Press ESC to go back", True, (210, 220, 235))
+        hint = self.FONT_DESC.render("Press I for Instructions", True, (0, 0, 0))
         surface.blit(hint, hint.get_rect(midbottom=(W // 2, H - 10)))
         self.x_btn.draw(surface)
 

@@ -331,14 +331,14 @@ def start_login():
             draw_center_text(screen, message, FONT_MD, (0, 0, 0), SCREEN_H//2 + 60)
 
         # Footer hint
-        draw_center_text(screen, "Press I for Instructions", FONT_SM, (0, 0, 0), SCREEN_H - 20)
+        # draw_center_text(screen, "Press I for Instructions", FONT_SM, (0, 0, 0), SCREEN_H - 20)
 
         # ESC to quit (continuous keys)
         keys = pygame.key.get_pressed()
         if keys[pygame.K_ESCAPE]:
             running = False
-        if keys[pygame.K_i] and input_box.text.strip() == "":
-            route_to_instructions(BACKGROUND, screen)
+        # if keys[pygame.K_i] and input_box.text.strip() == "":
+        #     route_to_instructions(BACKGROUND, screen)
 
         pygame.display.flip()
 

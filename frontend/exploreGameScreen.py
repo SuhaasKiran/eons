@@ -474,6 +474,7 @@ class PokemonDisplay(BaseDisplay):
             running = False
         if keys[pygame.K_i]:
             route_to_instructions(self.background_path, self.screen)
+        if keys[pygame.K_m]: res = route_to_mode(self.background_path, self.screen); return
 
     def update(self, dt_ms: int):
         dt = dt_ms / 1000.0

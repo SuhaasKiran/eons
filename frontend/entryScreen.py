@@ -172,9 +172,13 @@ class EntryDisplay(BaseDisplay):
             return
 
         # I -> instructions
-        # if event.type == pygame.KEYDOWN and event.key == pygame.K_i and not self.loading and self.place_box.text.strip() == "" and  self.place_box.text.strip() == "":
-        #     res = route_to_instructions(self.background_path, self.screen)
-        #     return
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_i and not self.loading and self.place_box.text.strip() == "" and  self.place_box.text.strip() == "":
+            res = route_to_instructions(self.background_path, self.screen)
+            return
+        
+        if event.type == pygame.KEYDOWN and event.key == pygame.K_m and not self.loading and self.place_box.text.strip() == "" and  self.place_box.text.strip() == "":
+            res = route_to_mode(self.background_path, self.screen)
+            return
 
         # ESC to go back
         if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and not self.loading:
@@ -301,7 +305,7 @@ class EntryDisplay(BaseDisplay):
             surface.blit(t, t.get_rect(center=self.go_btn.rect.center))
 
         # Footer hint
-        footer = self.FONT_SM.render("Press ESC to go back", True, (80, 95, 120))
+        footer = self.FONT_SM.render("Press I for Instructions", True, (0, 0, 0))
         surface.blit(footer, footer.get_rect(midbottom=(self.card_rect.centerx, self.card_rect.bottom - 8)))
 
     # ---------- Backend Processing ----------
