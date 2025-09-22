@@ -123,6 +123,8 @@ class Animal:
         self.image_name = image_name
         self.relative_size = relative_size  # could be adjusted based on species
         self.rect = pygame.Rect(x - self.size//2, y - self.size//2, self.size, self.size)
+        self.info_timer = 0  
+        self.info_duration = 5000
 
         # Animation / proximity
         self.wiggle_time = 0.0
@@ -287,6 +289,12 @@ class Animal:
         # Update rect
         self.rect.topleft = (int(self.x - self.size//2), int(self.y - self.size//2))
 
+        if self.show_info and self.info_timer > 0:
+            self.info_timer -= dt * 1000  
+            if self.info_timer <= 0:
+                self.show_info = False
+                self.info_timer = 0
+
     def draw_info_box(self, screen: pygame.Surface):
         if not self.show_info:
             return
@@ -425,7 +433,7 @@ class PokemonDisplay(BaseDisplay):
     # ---------- BaseDisplay hooks ----------
     def on_event(self, event: pygame.event.Event):
         if event.type == pygame.KEYDOWN:
-            # Toggle info panel for closest animal when pressing 'P'
+        # Toggle info panel for closest animal when pressing 'P'
             if event.key == pygame.K_p:
                 closest = None
                 min_d = float('inf')
@@ -438,7 +446,10 @@ class PokemonDisplay(BaseDisplay):
                     should = not closest.show_info
                     for a in self.animals:
                         a.show_info = False
-                    closest.show_info = should
+                        a.info_timer = 0  # Reset timers for all animals
+                    if should:
+                        closest.show_info = True
+                        closest.info_timer = 5000
                 
 
             # Alternate: Toggle info panel for closest animal when pressing 'C'

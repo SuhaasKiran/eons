@@ -253,7 +253,7 @@ def show_user_info(username: str, player: Player, new_user=False):
 
 
 # -------------- Main Loop ---------------- #
-def main():
+def start_login():
     input_box = InputBox(SCREEN_W//2 - 170, SCREEN_H//2 - 10, 340, 48)
     enter_btn = Button(SCREEN_W//2 + 190, SCREEN_H//2 - 10, 120, 48, "Enter")
 
@@ -346,4 +346,4 @@ def main():
     sys.exit()
 
 if __name__ == "__main__":
-    main()
+    start_login()

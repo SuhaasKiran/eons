@@ -5,14 +5,22 @@ from collections import Counter
 from typing import Optional, Tuple
 from frontend.baseDisplay import BaseDisplay
 from backend.utils import *
+import yaml
 # ---------------------- Config ---------------------- #
 FPS = 120
 
+config_path = "config.yaml"
+if os.path.exists(config_path):
+    with open(config_path, 'r') as f:
+        config = yaml.safe_load(f)
+else:
+    config = {} 
 # Base stats
 BASE_SIZE   = 60
 BASE_SPEED  = 2.5
 BASE_SHOTS  = 2
-BASE_AMMO   = 12
+BASE_AMMO   = config.get("STARTING_BEASTBALLS", 10)
+print(f"Using BASE_AMMO = {BASE_AMMO}")
 
 # catcher/beastBalls
 catcher_SPEED = 6
@@ -229,7 +237,7 @@ class CaptureGameDisplay(BaseDisplay):
         size_px  = BASE_SIZE  * self.size_power
         speed_px = BASE_SPEED * self.speed_power
         hits_req = BASE_SHOTS * self.shots_power
-        ammo     = int(BASE_AMMO + hits_req * 4)
+        ammo     = int(BASE_AMMO)
         return int(size_px), speed_px, hits_req, ammo
 
     def reset_game(self):
