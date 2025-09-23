@@ -14,9 +14,9 @@ This is built on **PyGame**.
 1. Clone this repository
 2. Create a .env file. Store the required API keys:
    
-    OPENAI_API_KEY: <your_openai_api_key>
+    OPENAI_API_KEY= "<your_openai_api_key>"
     
-    DEEPAI_API_KEY: <your_deepai_api_key>
+    DEEPAI_API_KEY= "<your_deepai_api_key>"
    
 4. Create a virtual environment
 5. Install the requirements: pip install -r requirements.txt
